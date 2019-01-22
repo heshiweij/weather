@@ -1,0 +1,29 @@
+{
+    "name": "svenhe/weather",
+    "description": "A weather SDK",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "svenhe",
+            "email": "heshiweij@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "monolog/monolog": "^1.24",
+        "phpunit/phpunit": "^7.5",
+        "mockery/mockery": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Svenhe\\Weather\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Svenhe\\Weather\\ServiceProvider"
+            ]
+        }
+    }
+}
