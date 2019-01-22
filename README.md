@@ -1,6 +1,6 @@
 # Weather
 
-基于 高德开放平台 的 PHP 天气信息组件。
+基于 [高德开放平台](https://lbs.amap.com/) 的 PHP 天气信息组件。
 
 ## 安装
 
@@ -15,7 +15,7 @@ $ composer require svenhe/weather -vvv
 ## 使用
 
 ```php
-use Overtrue\Weather\Weather;
+use Svenhe\Weather\Weather;
 
 $key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
@@ -25,7 +25,7 @@ $weather = new Weather($key);
 ### 获取实时天气
 
 ```php
-$response = $weather->getWeather('深圳');
+$response = $weather->getLiveWeather('深圳');
 ```
 
 示例：
@@ -55,7 +55,7 @@ $response = $weather->getWeather('深圳');
 ### 获取近期天气预报
 
 ```php
-$response = $weather->getWeather('深圳', 'all');
+$response = $weather->getForecastWeather('深圳', 'json');
 ```
 
 示例：
@@ -133,7 +133,7 @@ $response = $weather->getWeather('深圳', 'all');
 第三个参数为返回值类型，可选 `json` 与 `xml`，默认 `json`：
 
 ```php
-$response = $weather->getWeather('深圳', 'all', 'xml');
+$response = $weather->getLiveWeather('深圳', 'xml');
 ```
 
 示例：

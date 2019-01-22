@@ -46,7 +46,7 @@ class Weather
      * @return string
      * @throws \Svenhe\Weather\Exceptions\InvalidArgumentException
      */
-    public function getWeather($city, $type = 'base', $format = 'json')
+    protected function getWeather($city, $type = 'base', $format = 'json')
     {
         if (! in_array(strtolower($type), ['base', 'all'])) {
             throw new InvalidArgumentException('Invalid response type: '.$type);
@@ -84,23 +84,13 @@ class Weather
         return 'json' === $format ? json_decode($response) : $response;
     }
 
-    public function getUsers()
+    public function getLiveWeather($city, $format = 'json')
     {
-
+        return $this->getWeather($city, 'base', $format);
     }
 
-    public function updateProfile()
+    public function getForecastWeather($city, $format = 'json')
     {
-
-    }
-
-    public function deleteOrder()
-    {
-
-    }
-
-    public function revertAction()
-    {
-
+        return $this->getWeather($city, 'all', $format);
     }
 }
